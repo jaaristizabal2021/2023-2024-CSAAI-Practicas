@@ -1,0 +1,19 @@
+body {
+    background-color: lightcoral;
+    color: black;
+  }
+  
+  h1 {
+    background-color: yellow;
+    color: blueviolet;
+  }
+  
+  p {
+    background-color: orange;
+  }
+  
+  /* Estilo Solo para el párrafo "especial" */
+  #especial {
+    background-color: green;
+    color: white;
+  }
