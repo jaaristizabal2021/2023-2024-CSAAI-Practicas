@@ -1,0 +1,17 @@
+
+/* Practicando en CSS */
+
+body {
+    padding: 5px;
+    background-color: #A8DEE8;
+    color: #635EE0;
+}
+
+h1 {
+    color: #635EE0;
+}
+
+p {
+    color: #5A83E8;
+    margin: 20px;
+}
