@@ -2,25 +2,68 @@
 * {
     box-sizing: border-box;
   }
-
+  
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 body{
-    background-color: sandybrown;
+  background-color: #FAF1C3;
+}
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
 }
 
-.columna {
-    float: left;
-    padding: 10px;
-    min-height: 500px;
-    }
-    
 .izquierda {
-    width: 25%;
-    }
-    
+width: 25%;
+}
+
 .derecha {
-    width: 75%;
+width: 75%;
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.filla:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#c1 {
+    background-color:#F7E6C9;
+}
+
+#c2 {
+    background-color:#FAEFC2;
+}
+
+/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
+/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.iresponsive {
+    padding: 2px;
+    float: left;
+    width: 100%;
+  }
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
     }
-    
+
+    .iresponsive {
+        width: 100%;
+    }
+}
+
+/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
 
 
 
