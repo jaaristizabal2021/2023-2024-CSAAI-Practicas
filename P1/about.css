@@ -1,0 +1,27 @@
+
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    background-color: sandybrown;
+}
+
+.columna {
+    float: left;
+    padding: 10px;
+    min-height: 500px;
+    }
+    
+.izquierda {
+    width: 25%;
+    }
+    
+.derecha {
+    width: 75%;
+    }
+    
+
+
+
+   
