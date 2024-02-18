@@ -5,8 +5,18 @@
   
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 body{
-  background-color: #FAF1C3;
+  background-color: rgb(8, 13, 61)
 }
+h1{
+  background-image: linear-gradient(to bottom, orangered, #f5d800);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Century Gothic', sans-serif;
+  font-style: italic;
+  font-size: 50px;
+}
+
 .columna {
 float: left;
 padding: 10px;

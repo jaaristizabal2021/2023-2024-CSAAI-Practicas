@@ -19,6 +19,7 @@ h1{
     font-family: 'Century Gothic', sans-serif;
     font-style: italic;
     font-size: 50px;
+    margin-left: 100px;
   }
 
 h2{ 
@@ -30,6 +31,7 @@ h2{
   font-family: 'Century Gothic', sans-serif;
   font-style: italic;
   border-radius: 10px;
+  font-size: 40px ;
 }
     
 
@@ -37,6 +39,7 @@ h2{
 float: left;
 padding: 10px;
 min-height: 500px;
+font-family: 'Century Gothic', sans-serif;
 }
 
 .izquierda {
@@ -72,6 +75,7 @@ clear: both;
 img {
     width: 100%;
     height: auto;
+    border-radius: 30px;
 }
 
 .iresponsive {
@@ -79,6 +83,15 @@ img {
     float: left;
     width: 100%;
   }
+
+.enlace{
+    background-image: linear-gradient(to bottom, orangered, #f5d800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+ 
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
