@@ -18,8 +18,10 @@ h1{
     color: transparent;
     font-family: 'Century Gothic', sans-serif;
     font-style: italic;
-    font-size: 50px;
+    font-size: 70px;
     margin-left: 100px;
+    animation: llama 1s infinite alternate-reverse;
+
   }
 
 h2{ 
@@ -32,7 +34,17 @@ h2{
   font-style: italic;
   border-radius: 10px;
   font-size: 40px ;
+  padding-left: 15px;
 }
+
+#t1{
+  margin-bottom:15px;
+  font-size: 50px ;
+  padding-left: 30px;}
+
+#t2{
+  font-size: 60px ;
+  padding-left: 40px;}
     
 
 .columna {
@@ -48,7 +60,8 @@ border-radius: 10px
 }
 
 .derecha {
-width: 75%;
+width: 73%;
+border-radius: 10px;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
@@ -61,12 +74,17 @@ clear: both;
 #c1 {
     background-color:#b63f07;
     color: white;
+    margin-left: 5px;
 }
 
 #c2 {
   background-color:#0f0357;
   color: #f5d800;
 
+}
+#parrafo{
+  padding-top: 70%;
+  padding-left: 10px;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
@@ -77,6 +95,12 @@ img {
     height: auto;
     border-radius: 30px;
 }
+#foto{
+    width: 90%;
+    height: auto;
+    margin-left: 40px;
+
+}
 
 .iresponsive {
     padding: 2px;
@@ -84,11 +108,17 @@ img {
     width: 100%;
   }
 
+#p2{
+  margin-left: 40px;
+  font-size: 20px;
+}
+
 .enlace{
     background-image: linear-gradient(to bottom, orangered, #f5d800);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    margin-left: 5%;
 
 }
  
@@ -107,3 +137,14 @@ img {
 }
 
 /* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+
+
+/* Efecto de llamas en el título*/
+@keyframes llama {
+  0% {
+      text-shadow: 0 0 0px #f5d800, 0 0 10px #ff5733, 0 0 40px #ff5733, 0 0 50px #ff5733, 0 0 60px #ff5733, 0 0 70px #ff5733, 0 0 80px #ff5733, 0 0 9px #ff5733;
+  }
+  100% {
+      text-shadow: 0 0 px #f5d800, 0 0 30px #ff5733, 0 0 0px #ff5733, 0 0 0px #ff5733, 0 0 60px #ff5733, 0 0 70px #ff5733, 0 0 80px #ff5733, 0 0 90px #ff5733, 0 0 100px #ff5733, 0 0 110px #ff5733, 0 0 120px #ff5733;
+  }
+}
