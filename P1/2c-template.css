@@ -38,13 +38,17 @@ h2{
 }
 
 #t1{
+  margin-top: 20px;
   margin-bottom:15px;
-  font-size: 50px ;
-  padding-left: 30px;}
+  font-size: 45px ;
+  padding-left: 40px;}
 
 #t2{
-  font-size: 60px ;
-  padding-left: 40px;}
+  font-size: 57px ;
+  padding-left: 27px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
     
 
 .columna {
@@ -78,13 +82,14 @@ clear: both;
 }
 
 #c2 {
-  background-color:#0f0357;
+  background-color:#160864;
   color: #f5d800;
 
 }
 #parrafo{
-  padding-top: 70%;
+  padding-top: 73%;
   padding-left: 10px;
+  line-height: 1.5;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
@@ -94,12 +99,12 @@ img {
     width: 100%;
     height: auto;
     border-radius: 30px;
+    margin-top: 10px;
 }
 #foto{
     width: 90%;
     height: auto;
-    margin-left: 40px;
-
+    margin-left: 10px;
 }
 
 .iresponsive {
