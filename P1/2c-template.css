@@ -12,42 +12,42 @@ body{
 }
 
 h1{
-    background-image: linear-gradient(to bottom, orangered, #f5d800);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-family: 'Century Gothic', sans-serif;
-    font-style: italic;
-    font-size: 70px;
-    margin-left: 100px;
-    animation: llama 1s infinite alternate-reverse;
-
-  }
-
-h2{ 
-  
   background-image: linear-gradient(to bottom, orangered, #f5d800);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-family: 'Century Gothic', sans-serif;
   font-style: italic;
-  border-radius: 10px;
-  font-size: 40px ;
-  padding-left: 15px;
+  font-size: 70px;
+  margin-left: 90px;
+  animation: llama 1s infinite alternate-reverse;
+
+}
+
+h2{ 
+  
+background-image: linear-gradient(to bottom, orangered, #f5d800);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+font-family: 'Century Gothic', sans-serif;
+font-style: italic;
+border-radius: 10px;
+font-size: 40px ;
+padding-left: 15px;
 }
 
 #t1{
-  margin-top: 20px;
-  margin-bottom:15px;
-  font-size: 45px ;
-  padding-left: 40px;}
+margin-top: 20px;
+margin-bottom:15px;
+font-size: 45px ;
+padding-left: 25px;}
 
 #t2{
-  font-size: 57px ;
-  padding-left: 27px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+font-size: 57px ;
+padding-left: 10px;
+margin-top: 15px;
+margin-bottom: 15px;
 }
     
 

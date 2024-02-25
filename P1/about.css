@@ -13,13 +13,14 @@ body{
 }
 h1{
   font-size: 50px;
-  margin-left: 35%;
+  margin-left: 25%;
 }
 
 h2{
   font-family: 'Century Gothic', sans-serif;
   font-style: italic;
   padding-inline-start: 2%;
+  margin-left: 5%;
 
 }
 .t1{
@@ -46,16 +47,16 @@ min-height: 500px;
   border-radius: 10px
 }
   
- .derecha {
+.derecha {
   width: 73%;
   border-radius: 10px;
 
 }
 
 #lista{
-  border-color: #f5d800;
-  
+  border-color: #f5d800;  
 }
+
 #apartados {
   border-radius: 12px;
   border: solid;;
@@ -65,7 +66,8 @@ min-height: 500px;
 
 .parrafo{
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 20px;
+  line-height: 1.25;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
@@ -90,19 +92,6 @@ clear: both;
     height: 100px;
 }
 
-#c1 {
-  background-color: #b63f07;
-  border: solid;
-  border-color: #f5d800;
-}
-
-#c2 {
-  background-color: rrgb(22, 22, 27);
-  border: none;
-  border-color: #f5d800;
-  height: 100px;
-}
-
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
@@ -111,10 +100,23 @@ img {
     height: auto;
     margin-left: 10%;
     border-radius: 15px;
+    max-width: 100%; /* Ajustar la imagen al ancho máximo del contenedor */
 }
 #guitarra{
-    width: 40%;
+    width: 200%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 25px;
     margin-left: 30%;
+}
+
+
+
+#contenedor {
+  margin-right: 35%; /* Margen entre el texto y la imagen */
+  font-size: 20px;
+  line-height: 2;
+
 }
 
 .iresponsive {
