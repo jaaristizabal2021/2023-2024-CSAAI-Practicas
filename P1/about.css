@@ -23,11 +23,11 @@ h2{
   margin-left: 5%;
 
 }
-.t1{
+#t1{
   margin-left: 25%;
   font-size: 35px;
 }
-#degradado{
+.degradado{
   background-image: linear-gradient(to bottom, orangered, #f5d800);
   -webkit-background-clip: text;
   background-clip: text;
@@ -53,15 +53,10 @@ min-height: 500px;
 
 }
 
-#lista{
-  border-color: #f5d800;  
-}
-
-#apartados {
+.apartados {
   border-radius: 12px;
   border: solid;;
   width: auto;
-  
 }
 
 .parrafo{
@@ -71,6 +66,7 @@ min-height: 500px;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
+
 .filla:after {
 content: "";
 display: table;
@@ -102,21 +98,19 @@ img {
     border-radius: 15px;
     max-width: 100%; /* Ajustar la imagen al ancho máximo del contenedor */
 }
+
 #guitarra{
-    width: 200%;
+    width: 90%;
     height: auto;
     max-width: 100%;
     border-radius: 25px;
     margin-left: 30%;
 }
 
-
-
 #contenedor {
   margin-right: 35%; /* Margen entre el texto y la imagen */
   font-size: 20px;
   line-height: 2;
-
 }
 
 .iresponsive {
@@ -124,7 +118,7 @@ img {
     float: left;
     width: 100%;
   }
-
+  
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
