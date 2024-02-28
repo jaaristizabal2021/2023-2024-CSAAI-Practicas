@@ -54,6 +54,8 @@ min-height: 500px;
 }
 
 .apartados {
+  margin-bottom: 20px;
+
   border-radius: 12px;
   border: solid;;
   width: auto;
