@@ -1,6 +1,4 @@
-/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
-/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
-/* Así definimos el comportamiento de caja para todos los elementos */
+
 * {
     box-sizing: border-box;
   }
@@ -90,9 +88,6 @@ clear: both;
   line-height: 1.5;
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
-
 img {
     width: 100%;
     height: auto;
@@ -119,8 +114,6 @@ a{
   margin-left: 25px;
 }
 
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
-/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
 @media screen and (max-width: 900px) {
    
@@ -134,6 +127,7 @@ a{
     width: 100px;
   }
 }
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 
 @media screen and (max-width: 600px) {
     .columna {
@@ -162,8 +156,6 @@ a{
     font-size: 40px ;
   }
 }
-
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
 
 
 /* Efecto de llamas en el título*/
