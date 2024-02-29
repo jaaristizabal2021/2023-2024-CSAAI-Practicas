@@ -130,6 +130,13 @@ img {
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
+@media screen and (max-width: 900px) {
+   
+  #t1{
+    font-size: 20px ;
+  }
+}
+
 @media screen and (max-width: 600px) {
     .columna {
       width: 100%;
@@ -138,6 +145,24 @@ img {
     .iresponsive {
         width: 100%;
     }
+
+    #t1{
+      font-size: 45px ;
+    }
+}
+
+@media screen and (max-width: 400px) {
+      
+  h1{
+    font-size: 60px
+}
+  #t1{
+    font-size: 35px ;
+  }
+
+  #t2{
+    font-size: 40px ;
+  }
 }
 
 /* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
