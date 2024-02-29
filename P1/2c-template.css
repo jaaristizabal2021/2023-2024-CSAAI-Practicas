@@ -50,6 +50,7 @@ h2{
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-style: italic;
 }
 
 #t1{
@@ -114,17 +115,9 @@ img {
   margin-left: 40px;
   font-size: 20px;
 }
-
-button{
-    background-color: rgb(8, 13, 61);
-    border-radius: 20px;  
-    font-size: 20px;
-    margin-left: 35%;
-    height: 35px;
-    width: 200px;
-    font-style: italic;
+a{
+  margin-left: 25px;
 }
- 
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
@@ -134,8 +127,8 @@ button{
   #t1{
     font-size: 20px ;
   }
-  button{
-    font-size: 15px;
+  a{
+    font-size: 20px;
     margin-left: 35%;
     height: 35px;
     width: 100px;
