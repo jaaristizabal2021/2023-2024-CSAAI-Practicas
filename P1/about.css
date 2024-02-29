@@ -11,6 +11,7 @@ body{
   font-family: 'Century Gothic', sans-serif;
 
 }
+
 h1{
   font-size: 50px;
   margin-left: 25%;
@@ -21,26 +22,20 @@ h2{
   font-style: italic;
   padding-inline-start: 2%;
   margin-left: 5%;
-
 }
+
 #t1{
   margin-left: 25%;
   font-size: 35px;
 }
+
 .degradado{
-  background-image: linear-gradient(to bottom, orangered, #f5d800);
-  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, orangered, #f5d800); 
+  -webkit-background-clip: text;  /* Recorta el fondo del elemento */
   background-clip: text;
   color: transparent;
   font-family: 'Century Gothic', sans-serif;
   font-style: italic;
-}
-#info{
-  margin-left: 10px;
-}
-
-dl{
-  margin-left: 20px;
 }
 
 .columna {
@@ -60,9 +55,13 @@ min-height: 500px;
 
 }
 
+#info{
+  margin-left: 10px;
+}
+
+
 .apartados {
   margin-bottom: 20px;
-
   border-radius: 12px;
   border: solid;;
   width: auto;
@@ -86,8 +85,6 @@ clear: both;
     background-color: #b63f07;
     border: solid;
     border-color: #f5d800;
-
-
 }
 
 #c2 {
@@ -96,9 +93,6 @@ clear: both;
     border-color: #f5d800;
     height: 100px;
 }
-
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
     width: 80%;
@@ -113,13 +107,22 @@ img {
     height: auto;
     max-width: 100%;
     border-radius: 25px;
-    margin-left: 30%;
+    margin-left: 35%;
 }
 
 #contenedor {
   margin-right: 35%; /* Margen entre el texto y la imagen */
   font-size: 20px;
   line-height: 2;
+}
+
+dl{
+  margin-left: 20px;
+}
+
+ul{
+  font-size: 23px;
+  margin-left: 50px;
 }
 
 .iresponsive {
@@ -139,8 +142,7 @@ img {
     .iresponsive {
         width: 100%;
     }
+    ul{
+      font-size: 20px;
+      }
 }
-
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
-
-/* Efecto de llamas en el título*/
