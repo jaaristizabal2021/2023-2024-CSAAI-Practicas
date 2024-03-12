@@ -1,0 +1,37 @@
+
+
+* {
+    box-sizing: border-box;
+  }
+
+p{
+    font-size: 30px;
+    margin:20px;
+}
+
+#contenedor p{
+  display: inline; /* Hace que los párrafos se muestren en línea */
+}
+
+body{
+  margin-left: 50%;
+
+}
+
+div{
+  border: solid;
+  margin-right:240px;
+}
+
+button{
+  font-size: 50px;
+}
+
+#display2{
+  margin-left: 110px;
+}
+
+.m{
+  border: solid;
+  
+}
