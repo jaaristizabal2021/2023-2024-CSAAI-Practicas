@@ -50,40 +50,41 @@ gui.reset.onclick = () => {
 }
 
 
-
-m1.innerHTML = "*";
-
-
-for (let boton of botones) {
-    boton.onclick = (ev) => {
-    m1.innerHTML += boton.value
-  }
-}
-
-
-
 var x = 0;
 for (let boton of botones) {
   boton.onclick = (ev) => {
     crono.start();
     if (boton.value == valorM1){
+      var y = 0;
+      console.log(boton.value," Valor de x = ", x)
       m1.innerHTML = boton.value; 
-      x += 1;
+      if (y == 0 ){
+        x += 1;
+      }
       }
 
     if (boton.value == valorM2){
+        var y = 0;
+        console.log(boton.value," Valor de x = ", x)
         m2.innerHTML = boton.value; 
-        x += 1;
-        }
+        if (y == 0 ){
+          x += 1;
+        }        }
     if (boton.value == valorM3){
+        var y = 0;
+        console.log(boton.value," Valor de x = ", x)
         m3.innerHTML = boton.value; 
-        x += 1;
-        }
+        if (y == 0 ){
+          x += 1;
+        }        }
     if (boton.value == valorM4){
+        var y = 0;  
+        console.log(boton.value," Valor de x = ", x)
         m4.innerHTML = boton.value; 
-        x += 1;
-        }
-    if (m4!="*" & m1!="*" & m2!="*" & m3!="*" ){
+        if (y == 0 ){
+          x += 1;
+        }        }
+    if ( x== 4 ){
           console.log("Stop!");
           crono.stop();
         }
