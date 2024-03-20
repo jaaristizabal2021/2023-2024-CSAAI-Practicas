@@ -1,9 +1,9 @@
 
-var pantallaInicial = document.getElementById("menu");
-var contenidoPrincipal = document.getElementById("columna");
+var menu = document.getElementById("menu");
+var juego = document.getElementById("columna");
 var botonContinuar = document.getElementById("botonContinuar");
-pantallaInicial.style.display = "";
-contenidoPrincipal.style.display = "none";
+menu.style.display = "";
+juego.style.display = "none";
 
 const titulo = document.getElementById("titulo")
 const botones = document.getElementsByClassName("digito")
@@ -18,12 +18,11 @@ const reloj = {
   start : document.getElementById("start"),
   stop : document.getElementById("stop"),
   reset : document.getElementById("reset"),
-
 }
 
 let min = 0;
 let max = 9;
-let valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;
+let valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;  //-- Asignando valores aleatorios para la clave
 let valorM2 = Math.floor(Math.random() * (max - min + 1)) + min;
 let valorM3 = Math.floor(Math.random() * (max - min + 1)) + min;
 let valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -44,73 +43,74 @@ reloj.stop.onclick = () => {
 //-- Reset del cronómetro
 reloj.reset.onclick = () => {
   console.log("Reset!");
-  m1.innerHTML = "*";
+  m1.innerHTML = "*";  //-- Devolvemos al estado inicial 
   m2.innerHTML = "*";
   m3.innerHTML = "*";
   m4.innerHTML = "*";
-  valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;
+  valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;  //-- Reasignando valores aleatorios
   valorM2 = Math.floor(Math.random() * (max - min + 1)) + min;
   valorM3 = Math.floor(Math.random() * (max - min + 1)) + min;
   valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log(valorM1, valorM2, valorM3, valorM4);
   acierto = 0;
-  intentos = 1;
   numIntentos.innerHTML = ("Intentos: " + intentos);
+  intentos = 1;
   titulo.innerHTML = "BOOM!";
   crono.reset();
 }
 
-
 botonContinuar.addEventListener("click", function() {
-  // Ocultar la pantalla inicial
-  pantallaInicial.style.display = "none";
-  // Mostrar el contenido principal
-  contenidoPrincipal.style.display = "block";
+  // Oculta la pantalla inicial
+  menu.style.display = "none";
+  console.log("Mostrando Menú principal");
+  // Muestra el contenido principal
+  juego.style.display = "block";
+  console.log("Mostrando Juego");
+
 });
 
-console.log(valorM1, valorM2, valorM3, valorM4);
+console.log("Clave: ",valorM1, valorM2, valorM3, valorM4);
 
 for (let boton of botones) {
   boton.onclick = (ev) => {
   crono.start();
   console.log("Intentos: ", intentos);
   if (boton.value == valorM1 && m1.innerHTML === '*'){
-    console.log(boton.value," Aciertos: ", acierto);
+    console.log("Botón: ",boton.value,"| Aciertos: ", acierto);
     m1.innerHTML = boton.value; 
     acierto += 1;
     }     
   if (boton.value == valorM2 && m2.innerHTML === '*'){
       var y = 0;
-      console.log(boton.value," Aciertos: ", acierto);
+      console.log("Botón: ",boton.value,"| Aciertos: ", acierto);
       m2.innerHTML = boton.value; 
       acierto += 1;
 
       }        
   if (boton.value == valorM3 && m3.innerHTML === '*'){
-      console.log(boton.value," Aciertos: ", acierto);
+      console.log("Botón: ",boton.value,"| Aciertos: ", acierto);
       m3.innerHTML = boton.value; 
       acierto += 1;
       }        
   if (boton.value == valorM4 && m4.innerHTML === '*'){
-      console.log(boton.value," Aciertos: ", acierto);
+      console.log("Botón: ",boton.value,"| Aciertos: ", acierto);
       m4.innerHTML = boton.value; 
       acierto += 1;
       }
   if ( acierto == 4){
         console.log("Stop!");
         crono.stop();
-        if (acierto == 4){
-            titulo.innerHTML = "YOU WIN!";
-            acierto = 0;
-            intentos = 0;
-        }
-        }
+        titulo.innerHTML = "YOU WIN!";
+        acierto = 0;
+        intentos = 0;
+      }
+
   if (intentos < 7){
       intentos += 1;
       numIntentos.innerHTML = ("Intento: "+ (intentos));
     }
     else{
-      titulo.innerHTML = "Has perdido!"
+      titulo.innerHTML = "GAME OVER..."
       console.log("Stop!");
       crono.stop();
       intentos = 1;
