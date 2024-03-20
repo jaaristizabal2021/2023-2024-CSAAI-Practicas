@@ -125,6 +125,13 @@ button{
   font-size: 30px;
 }
 
+#l1{color: red;}
+#l2{color: purple;}
+#l3{color: rgb(0, 245, 82);}
+#l4{color: yellow}
+#l5{color: blue;}
+
+
 @media screen and (max-width: 400px) {
       
     p{
