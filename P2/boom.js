@@ -54,8 +54,8 @@ reloj.reset.onclick = () => {
   valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log(valorM1, valorM2, valorM3, valorM4);
   acierto = 0;
-  intentos = 0;
-  numIntentos.innerHTML = ("Intentos: "+ intentos);
+  intentos = 1;
+  numIntentos.innerHTML = ("Intentos: " + intentos);
   titulo.innerHTML = "BOOM!";
   crono.reset();
 }
@@ -105,15 +105,15 @@ for (let boton of botones) {
             intentos = 0;
         }
         }
-  if (intentos < 6){
+  if (intentos < 7){
       intentos += 1;
-      numIntentos.innerHTML = ("Intento: "+ (intentos+1));
+      numIntentos.innerHTML = ("Intento: "+ (intentos));
     }
     else{
       titulo.innerHTML = "Has perdido!"
       console.log("Stop!");
       crono.stop();
-      intentos = 0;
+      intentos = 1;
       }
         
  }
