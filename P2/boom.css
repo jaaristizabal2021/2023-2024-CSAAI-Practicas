@@ -2,29 +2,44 @@
 	box-sizing: border-box;
 }
 h1{
-    font-size: 100px;
-    margin-right: 100px;
-    color: rgb(236, 233, 35);
+    font-size:500%;
+    margin-left: 20% ;
+    color: rgb(35, 236, 226);
     font-weight: bold;
     font-family: 'Century Gothic', sans-serif;
     font-style: italic;
     animation: llama 1s infinite alternate-reverse;
-    
+}
+
+h2{
+    margin-right: 100px;
+    color: rgb(35, 236, 226);
+    font-weight: bold;
+    font-family: 'Century Gothic', sans-serif;
+    font-style: italic;
 }
 body{
-  background-image: linear-gradient(to left, rgb(223, 50, 7), rgb(163, 141, 13));
+  background-image: linear-gradient(to left, rgb(108, 8, 155), rgb(3, 54, 131));
   margin: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+#info{
+  margin-left: 20%;
+}
+#info2{
+  margin-left: 5%;
+}
+
 .m{
   display: flex;
 }
 p{
     margin:20px;
-    color: rgb(236, 233, 35);
+    color: rgb(35, 236, 226);
     font-weight: bold;
   
   }
@@ -60,8 +75,8 @@ p{
 
 #principal{
     border: solid;
-    border-color: rgb(236, 233, 35);
-    background-color: #d6d1cd;
+    border-color: rgb(35, 236, 226);
+    background-color: #9214db;
     font-weight: bold;
     border-radius: 10px;
 
@@ -71,7 +86,7 @@ button{
   font-size: 50px;
   background-color: rgba(0, 0, 0, .4);
   border: none;
-  color: rgb(236, 199, 35);
+  color: rgb(35, 236, 226);
   font-weight: bold;
   cursor: pointer;
   }
@@ -84,7 +99,7 @@ button{
   }
   
 .m{
-    color: #ff5733;     
+    color: #33adff;     
     margin-left: 30px; 
 }
 #digitos{
@@ -94,8 +109,7 @@ button{
   
   }
 #state{
-    margin-left: 40px;
-    margin-top: 30px;
+    margin: 30px;
 }
 
   
@@ -106,17 +120,20 @@ button{
   margin-bottom: 50px;
   }
 
+#intentos{
+  font-size: 30px;
+}
+
 @media screen and (max-width: 400px) {
       
     p{
-      font-size: 40px
+      font-size: 20px
     }
     button{
         font-size: 40px;;
     }
     h1{
-      margin-left: 10px;
-      font-size: 60px;
+      font-size: 30px;
     }
   
     #state{
@@ -149,40 +166,46 @@ button{
       width: 100%;
     }
     h1{
-      margin-left: 100px;
-      font-size: 80px;
+      font-size: 60px;
     }
     button{
-      margin-left: 10px;
     }
     #display2 {
-      padding-left: 70px;
       font-size: 45px;
     }
+    #derecha{
+      margin-right: 40px;
+    }   
     
     #boton0{
-      margin-left: 75px;
+      margin-left: 50px;
     }
     #digitos{
-      margin-left: 145px;
+      margin-left: 80px;
     }
 
-    #state{
-      margin-top: 30px;
-      margin-right: 25px;
+    #state button{
+      margin: 5px;
     }
+    #state{
+      margin-left: 20px;  
+    }
+  
     #contenedor p{
-      margin-left: 40px;
       font-size: 40px;
+      margin: 20px
+    }
+    #info2{
+      font-size: 20px;
     }
 
 }
   /* Efecto de llamas en el título*/
 @keyframes llama {
     0% {
-        text-shadow: 0 0 0px #f5d800, 0 0 10px #ff5733, 0 0 40px #ff5733, 0 0 50px #ff5733, 0 0 60px #ff5733, 0 0 70px #ff5733, 0 0 80px #ff5733, 0 0 9px #ff5733;
+        text-shadow: 0 0 0px #0062f5, 0 0 10px #069bc0, 0 0 40px #5c0bc5, 0 0 50px #069bc0, 0 0 60px #069bc0, 0 0 70px #5c0bc5, 0 0 80px #069bc0, 0 0 9px #069bc0;
     }
     100% {
-        text-shadow: 0 0 px #f5d800, 0 0 30px #ff5733, 0 0 0px #ff5733, 0 0 0px #ff5733, 0 0 60px #ff5733, 0 0 70px #ff5733, 0 0 80px #ff5733, 0 0 90px #ff5733, 0 0 100px #ff5733, 0 0 110px #ff5733, 0 0 120px #ff5733;
+        text-shadow: 0 0 px #0062f5, 0 0 30px #069bc0, 0 0 0px #069bc0, 0 0 0px #069bc0, 0 0 60px #5c0bc5, 0 0 70px #5c0bc5, 0 0 80px #069bc0, 0 0 90px #069bc0, 0 0 100px #069bc0, 0 0 110px #069bc0, 0 0 120px #5c0bc5;
     }
   }
