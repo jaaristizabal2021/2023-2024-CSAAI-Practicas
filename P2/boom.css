@@ -25,6 +25,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 #info{
@@ -105,13 +106,13 @@ button{
 #digitos{
   margin-left: 165px ;
   font-size: 60px;
-  border: none;
-  
+  border: none; 
   }
+
+
 #state{
     margin: 30px;
 }
-
   
 #boton0{
     margin-left: 55px;
@@ -168,8 +169,7 @@ button{
     h1{
       font-size: 60px;
     }
-    button{
-    }
+    
     #display2 {
       font-size: 45px;
     }
@@ -198,9 +198,17 @@ button{
     #info2{
       font-size: 20px;
     }
+    #menu h1{
+      font-size: 300%;
+      }
+    img{
+        height: 300px;
+        margin-right: 200px;
+        margin-top:  30px; 
+        }
 
 }
-  /* Efecto de llamas en el título*/
+  /* Efecto luminoso en el título*/
 @keyframes llama {
     0% {
         text-shadow: 0 0 0px #0062f5, 0 0 10px #069bc0, 0 0 40px #5c0bc5, 0 0 50px #069bc0, 0 0 60px #069bc0, 0 0 70px #5c0bc5, 0 0 80px #069bc0, 0 0 9px #069bc0;

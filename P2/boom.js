@@ -1,12 +1,9 @@
 
-
-const reloj = {
-  display2 : document.getElementById("display2"),
-  start : document.getElementById("start"),
-  stop : document.getElementById("stop"),
-  reset : document.getElementById("reset"),
-
-}
+var pantallaInicial = document.getElementById("menu");
+var contenidoPrincipal = document.getElementById("columna");
+var botonContinuar = document.getElementById("botonContinuar");
+pantallaInicial.style.display = "";
+contenidoPrincipal.style.display = "none";
 
 const titulo = document.getElementById("titulo")
 const botones = document.getElementsByClassName("digito")
@@ -15,6 +12,14 @@ const m2 = document.getElementById("m2")
 const m3 = document.getElementById("m3")
 const m4 = document.getElementById("m4")
 const numIntentos = document.getElementById("intentos")
+
+const reloj = {
+  display2 : document.getElementById("display2"),
+  start : document.getElementById("start"),
+  stop : document.getElementById("stop"),
+  reset : document.getElementById("reset"),
+
+}
 
 let min = 0;
 let max = 9;
@@ -25,23 +30,17 @@ let valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
 var acierto = 0;
 var intentos = 0;
 
-//-- Definir un objeto cronómetro
 const crono = new Crono(reloj.display2);
-
-//---- Configurar las funciones de retrollamada
-
 //-- Arranque del cronometro
 reloj.start.onclick = () => {
   console.log("Start!!");
   crono.start();
 }
-
 //-- Detener el cronómetro
 reloj.stop.onclick = () => {
   console.log("Stop!");
   crono.stop();
 }
-
 //-- Reset del cronómetro
 reloj.reset.onclick = () => {
   console.log("Reset!");
@@ -55,13 +54,20 @@ reloj.reset.onclick = () => {
   valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log(valorM1, valorM2, valorM3, valorM4);
   acierto = 0;
+  intentos = 0;
   numIntentos.innerHTML = ("Intentos: "+ intentos);
   titulo.innerHTML = "BOOM!";
   crono.reset();
 }
 
 
-var acierto = 0;
+botonContinuar.addEventListener("click", function() {
+  // Ocultar la pantalla inicial
+  pantallaInicial.style.display = "none";
+  // Mostrar el contenido principal
+  contenidoPrincipal.style.display = "block";
+});
+
 console.log(valorM1, valorM2, valorM3, valorM4);
 
 for (let boton of botones) {
@@ -95,12 +101,13 @@ for (let boton of botones) {
         crono.stop();
         if (acierto == 4){
             titulo.innerHTML = "YOU WIN!";
+            acierto = 0;
             intentos = 0;
         }
         }
-  if (intentos < 5){
+  if (intentos < 6){
       intentos += 1;
-      numIntentos.innerHTML = ("Intentos: "+ intentos);
+      numIntentos.innerHTML = ("Intento: "+ (intentos+1));
     }
     else{
       titulo.innerHTML = "Has perdido!"
