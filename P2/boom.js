@@ -1,18 +1,19 @@
 
 var menu = document.getElementById("menu");
-var juego = document.getElementById("columna");
-var botonContinuar = document.getElementById("botonContinuar");
+var juego = document.getElementById("columna");     
+var botonContinuar = document.getElementById("botonContinuar");     
 menu.style.display = "";
 juego.style.display = "none";
 
-const titulo = document.getElementById("titulo")
-const botones = document.getElementsByClassName("digito")
-const m1 = document.getElementById("m1")
-const m2 = document.getElementById("m2")
-const m3 = document.getElementById("m3")
-const m4 = document.getElementById("m4")
-const numIntentos = document.getElementById("intentos")
+const titulo = document.getElementById("titulo");
+const botones = document.getElementsByClassName("digito");
+const m1 = document.getElementById("m1");
+const m2 = document.getElementById("m2");
+const m3 = document.getElementById("m3");
+const m4 = document.getElementById("m4");
+const numIntentos = document.getElementById("intentos");
 
+//--Elementos del cronómetro
 const reloj = {
   display2 : document.getElementById("display2"),
   start : document.getElementById("start"),
@@ -20,12 +21,14 @@ const reloj = {
   reset : document.getElementById("reset"),
 }
 
+//-- Variables de la clave secreta a adivinar
 let min = 0;
 let max = 9;
-let valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;  //-- Asignando valores aleatorios para la clave
+let valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;  
 let valorM2 = Math.floor(Math.random() * (max - min + 1)) + min;
 let valorM3 = Math.floor(Math.random() * (max - min + 1)) + min;
 let valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
+
 var acierto = 0;
 var intentos = 0;
 
@@ -43,17 +46,23 @@ reloj.stop.onclick = () => {
 //-- Reset del cronómetro
 reloj.reset.onclick = () => {
   console.log("Reset!");
-  m1.innerHTML = "*";  //-- Devolvemos al estado inicial 
+
+  //-- Devolvemos al estado inicial
+  m1.innerHTML = "*";   
   m2.innerHTML = "*";
   m3.innerHTML = "*";
   m4.innerHTML = "*";
-  valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;  //-- Reasignando valores aleatorios
+
+  //-- Reasignando valores aleatorios
+  valorM1 = Math.floor(Math.random() * (max - min + 1)) + min;  
   valorM2 = Math.floor(Math.random() * (max - min + 1)) + min;
   valorM3 = Math.floor(Math.random() * (max - min + 1)) + min;
   valorM4 = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(valorM1, valorM2, valorM3, valorM4);
-  acierto = 0;
+  console.log("Clave: ",valorM1, valorM2, valorM3, valorM4);
   numIntentos.innerHTML = ("Intentos: " + intentos);
+
+  //--Reseteamos numero de aciertos e intentos
+  acierto = 0;
   intentos = 1;
   titulo.innerHTML = "BOOM!";
   crono.reset();
@@ -71,6 +80,7 @@ botonContinuar.addEventListener("click", function() {
 
 console.log("Clave: ",valorM1, valorM2, valorM3, valorM4);
 
+
 for (let boton of botones) {
   boton.onclick = (ev) => {
   crono.start();
@@ -85,7 +95,6 @@ for (let boton of botones) {
       console.log("Botón: ",boton.value,"| Aciertos: ", acierto);
       m2.innerHTML = boton.value; 
       acierto += 1;
-
       }        
   if (boton.value == valorM3 && m3.innerHTML === '*'){
       console.log("Botón: ",boton.value,"| Aciertos: ", acierto);
@@ -114,7 +123,6 @@ for (let boton of botones) {
       console.log("Stop!");
       crono.stop();
       intentos = 1;
-      }
-        
+      }      
  }
 }
