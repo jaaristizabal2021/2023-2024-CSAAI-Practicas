@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Código javascript -->
+    <script src="crono.js" defer></script>
     <script src="funcion.js" defer></script>
 
 </head>
@@ -19,9 +20,21 @@
 
     <h1>Tiro parabólico</h1>
     <canvas id="ctiro"></canvas>
+    <div id="paneles">
+        <input type="button" id="btnLanzar" value="Lanzar">
+        <input type="button" id="btnIniciar" value="Iniciar">
+        <p id="display">0:0:0</p>
+        <h3>Velocidad</h3>
+        <p>Range <input type="range" id="vel"> <span id="dispVel"></span>  
+            Valor final: <span id="dispVel2"></span>
+        </p>
+        <h3>Angulo</h3>
+        <p>Range <input type="range" id="angle"> <span id="dispAngle"></span>  
+            Valor final: <span id="dispAngle2"></span>
+        </p>
+    </div>
+        
 
-    <input type="button" id="btnLanzar" value="Lanzar">
-    <input type="button" id="btnIniciar" value="Iniciar">
 
 </body>
 </html>
