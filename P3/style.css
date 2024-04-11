@@ -1,6 +1,14 @@
 /* 
 Estilos para el campo de tiro
 */  
+h1{
+  margin-left: 40%;
+}
+body{
+  background-image: linear-gradient(to left, rgb(17, 77, 3), rgb(209, 56, 9));
+  color: azure;
+
+}
 
 #ctiro {
   background-color: lightblue;

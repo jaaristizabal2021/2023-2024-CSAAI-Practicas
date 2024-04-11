@@ -19,6 +19,18 @@ const reloj = {
     stop : document.getElementById("stop"),
   }
 
+//-- Constantes display y rangos de velocidad y ángulo 
+const crono = new Crono(reloj.display);
+const vel = document.getElementById("vel");
+const range_disp = document.getElementById("dispVel");
+const range_disp2 = document.getElementById("dispVel2");
+const angle = document.getElementById("angle");
+const range_disp3 = document.getElementById("dispAngle");
+const range_disp4 = document.getElementById("dispAngle2");
+
+//--Titulo
+let titulo = document.getElementById("titulo");
+
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
 let yop = 300;
@@ -99,7 +111,7 @@ function detectarColision() {
     const distancia = Math.sqrt((xp - xob) ** 2 + (yp - yob) ** 2);
 
     // Si la distancia es menor que la suma de los radios del proyectil y el objetivo, hay colisión
-    if (distancia < 30) { // El radio del proyectil es 25, y el del objetivo también es 25
+    if (distancia < 50) { // El radio del proyectil es 25, y el del objetivo también es 25
         return true;
     }
     return false;
@@ -119,15 +131,13 @@ function lanzar()
 
     // Verificar si el proyectil ha alcanzado los límites del canvas en el eje X
     if (xp < 0 || xp > canvas.width) {
-        velx = -velx; // Revertir la dirección horizontal
-        alert("¡Objetivo fallido!");
++        alert("¡Objetivo fallido!");
         location.reload();      //-- Reiniciando
 
     }
 
     // Verificar si el proyectil ha alcanzado los límites del canvas en el eje Y
     if (yp < 0 || yp > canvas.height) {
-        vely = -vely; // Revertir la dirección vertical
         alert("¡Objetivo fallido!");
         location.reload();      //-- Reiniciando
 
@@ -143,20 +153,15 @@ function lanzar()
 
     // Detectar colisión
     if (detectarColision()) {
-        alert("¡Objetivo alcanzado!");
+        titulo.innerHTML = "Has acertado!!!";
         return; // Detener la animación cuando se alcanza el objetivo
+        alert("¡Objetivo alcanzado!");
+
     }
 
     requestAnimationFrame(lanzar);}
 
-const crono = new Crono(reloj.display);
-const vel = document.getElementById("vel");
-const range_disp = document.getElementById("dispVel");
-const range_disp2 = document.getElementById("dispVel2");
-const angle = document.getElementById("angle");
-const range_disp3 = document.getElementById("dispAngle");
-const range_disp4 = document.getElementById("dispAngle2");
-
+//-- Deslizadores de velocidad y ángulo
 vel.oninput = () => {
     range_disp.innerHTML = vel.value;
 }
@@ -169,14 +174,12 @@ vel.onchange = () => {
 angle.oninput = () => {
     range_disp3.innerHTML = angle.value;
 }
-    
+
 angle.onchange = () => {
     range_disp4.innerHTML = angle.value;
     angulo = angle.value * Math.PI/180;
     crono.start();
 }
-
-
 
 //-- Función de retrollamada del botón de disparo
 btnLanzar.onclick = () => {
