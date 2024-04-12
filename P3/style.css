@@ -2,24 +2,49 @@
 Estilos para el campo de tiro
 */  
 h1{
-  margin-left: 40%;
+  margin-left: 20%;
+  font-size: 250%;
+  margin: 5%;
 }
 body{
-  background-image: linear-gradient(to left, rgb(17, 77, 3), rgb(209, 56, 9));
+  background-image: linear-gradient(to left, rgb(8, 87, 161), rgb(89, 25, 207));
   color: azure;
-
+  margin-left: 30%;
 }
 
 #ctiro {
-  background-color: lightblue;
+  background-color: rgb(173, 230, 230);
   border-style: solid;
   border-width: 1px;
   border-color: black;
   border-radius: 5px;
-  margin-left: 500px;
+  margin-left: 0%;
 }
 
 #paneles{
   margin-top: 30px;
-  margin-left: 750px;
+  margin-left: 250px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  
+  body{
+  background-image: linear-gradient(to left, rgb(8, 87, 161), rgb(89, 25, 207));
+  color: azure;
+  margin-left: 0%;
+  }
+  canvas {
+    border: 1px solid black;
+    display: block;
+    width: 100%; /* Ajusta el ancho del canvas al 80% del tamaño del contenedor */
+    height: auto; /* Hace que la altura se ajuste automáticamente según el ancho */
+    margin: 10%
+
+    }
+  #paneles{
+    margin: 0;
+    margin-left: 10%;
+  }
 }

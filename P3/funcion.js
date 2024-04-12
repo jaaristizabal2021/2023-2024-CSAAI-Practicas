@@ -22,6 +22,7 @@ const reloj = {
 //-- Constantes display y rangos de velocidad y ángulo 
 const crono = new Crono(reloj.display);
 const vel = document.getElementById("vel");
+const display2= document.getElementById("display2");
 const range_disp = document.getElementById("dispVel");
 const range_disp2 = document.getElementById("dispVel2");
 const angle = document.getElementById("angle");
@@ -30,6 +31,9 @@ const range_disp4 = document.getElementById("dispAngle2");
 
 //--Titulo
 let titulo = document.getElementById("titulo");
+
+//--Display que muestre el número de aciertos
+let aciertos = 0;
 
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
@@ -103,7 +107,7 @@ function dibujarO(x,y) {
 dibujarO(xob,yob); // Pintar el objetivo
 
 //-- Dibujar el proyectil
-dibujarP(xop, yop, 50, 50, "green"); // Pintar el proyectil
+dibujarP(xop, yop, 50, 50, "darkblue"); // Pintar el proyectil
 
 //-- Función que detecta la colisión entre proyectil y bola
 function detectarColision() {
@@ -112,6 +116,8 @@ function detectarColision() {
 
     // Si la distancia es menor que la suma de los radios del proyectil y el objetivo, hay colisión
     if (distancia < 50) { // El radio del proyectil es 25, y el del objetivo también es 25
+        aciertos += 1;
+        display2.innerHTML = ("Aciertos: "+ (aciertos));
         return true;
     }
     return false;
@@ -148,7 +154,7 @@ function lanzar()
 
 
     //-- 3) Dibujar los elementos visibles
-    dibujarP(xp, yp, 50, 50, "blue"); // Pintar el proyectil
+    dibujarP(xp, yp, 50, 50, "yellow"); // Pintar el proyectil
     dibujarO(xob,yob); // Pintar el objetivo
 
     // Detectar colisión
