@@ -7,8 +7,14 @@ const btnLanzar = document.getElementById("btnLanzar");
 //-- Acceder al botón de inicio
 const btnIniciar = document.getElementById("btnIniciar");
 
-canvas.width = 800;
-canvas.height = 400;
+//-- Sonidos
+const lanzarSonido = new Audio('audio1.mp3');
+const victoriaSonido = new Audio('audio2.mp3');
+const falloSonido = new Audio('audio3.mp3');
+
+
+canvas.width = 900;
+canvas.height = 500;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -115,9 +121,11 @@ function detectarColision() {
     const distancia = Math.sqrt((xp - xob) ** 2 + (yp - yob) ** 2);
 
     // Si la distancia es menor que la suma de los radios del proyectil y el objetivo, hay colisión
-    if (distancia < 50) { // El radio del proyectil es 25, y el del objetivo también es 25
+    if (distancia < 60) { // El radio del proyectil es 25, y el del objetivo también es 25
         aciertos += 1;
         display2.innerHTML = ("Aciertos: "+ (aciertos));
+        victoriaSonido.play();
+        crono.stop();
         return true;
     }
     return false;
@@ -137,16 +145,16 @@ function lanzar()
 
     // Verificar si el proyectil ha alcanzado los límites del canvas en el eje X
     if (xp < 0 || xp > canvas.width) {
-+        alert("¡Objetivo fallido!");
-        location.reload();      //-- Reiniciando
-
+        titulo.innerHTML = "Has fallado! Vuelve a intertarlo";
+        falloSonido.play();
+        crono.stop();
     }
 
     // Verificar si el proyectil ha alcanzado los límites del canvas en el eje Y
     if (yp < 0 || yp > canvas.height) {
-        alert("¡Objetivo fallido!");
-        location.reload();      //-- Reiniciando
-
+        titulo.innerHTML = "Has fallado! Vuelve a intertarlo";
+        falloSonido.play();
+        crono.stop();
     }
     //-- if xp - xo  menor 10{}
     //-- 2) Borrar el canvas
@@ -191,6 +199,8 @@ angle.onchange = () => {
 btnLanzar.onclick = () => {
     lanzar();
     crono.start();
+    lanzarSonido.currentTime = 0;
+    lanzarSonido.play();
 }
 
 //-- Función de retrollamada del botón iniciar

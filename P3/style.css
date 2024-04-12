@@ -7,18 +7,21 @@ h1{
   margin: 5%;
 }
 body{
-  background-image: linear-gradient(to left, rgb(8, 87, 161), rgb(89, 25, 207));
+  background-image: linear-gradient(to left, rgb(120, 179, 235), rgb(18, 109, 38));
   color: azure;
   margin-left: 30%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
 
 #ctiro {
-  background-color: rgb(173, 230, 230);
   border-style: solid;
   border-width: 1px;
   border-color: black;
   border-radius: 5px;
   margin-left: 0%;
+  background-image: url('fondo.jpg'); 
+  background-size: cover; 
 }
 
 #paneles{
@@ -27,19 +30,18 @@ body{
 }
 
 
-
 @media screen and (max-width: 600px) {
   
   body{
-  background-image: linear-gradient(to left, rgb(8, 87, 161), rgb(89, 25, 207));
+  background-image: linear-gradient(to left, rgb(23, 127, 224), rgb(18, 109, 38));
   color: azure;
   margin-left: 0%;
   }
   canvas {
     border: 1px solid black;
     display: block;
-    width: 100%; /* Ajusta el ancho del canvas al 80% del tamaño del contenedor */
-    height: auto; /* Hace que la altura se ajuste automáticamente según el ancho */
+    width: 100%; 
+    height: auto; 
     margin: 10%
 
     }
