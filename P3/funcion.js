@@ -107,8 +107,6 @@ function dibujarO(x,y) {
     ctx.closePath();
 }
 
-
-
 //-- Dibujar el objetivo
 dibujarO(xob,yob); // Pintar el objetivo
 
