@@ -7,15 +7,19 @@
         <title> Memory </title>
 
         <link rel="stylesheet" href="style.css" />
+        <script src="crono.js" defer></script>
         <script src="memory.js" defer></script>
     </head>
     <body>
+        <h1>REMEMBER THE ANIMAL 🦥</h1>
         <div class="game">
             <div class="controles">
-                <button>Comenzar</button>
+                <button id="play">Comenzar</button>
+                <button id="replay">Reiniciar</button>
                 <div class="display">
                     <div class="movimientos">0 movimientos</div>
                     <div class="timer">tiempo: 0 sec</div>
+                    <div id="display2">Aciertos : 0</div>
                 </div>
             </div>
             <div class="grid-container">

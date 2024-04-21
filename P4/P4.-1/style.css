@@ -6,11 +6,23 @@
 /* Y así podremos hacer referencia al font-family Montserrat más adelante
 font-family: Montserrat;
 */
+
+body{
+    background-color: #6b3508;
+}
+h1{
+    font-size: 40px;
+    margin: 10px;
+    color: #f1dc18;
+}
+
 .game {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #814c21;
+    border-radius: 25px;
 }
 
 button {
@@ -81,8 +93,8 @@ html {
 }
 
 button {
-    background: #282A3A;
-    color: #FFF;
+    background: #f1dc18;
+    color: #6b3508;
     border-radius: 5px;
     padding: 10px 20px;
     border: 0;
@@ -92,12 +104,14 @@ button {
 }
 
 .disabled {
-    color: #757575;
+    color: #6b3508;
 }
 
 .display {
-    color: #282A3A;
+    color: #f1dc18;
     font-size: 14pt;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .grid-container {
@@ -141,7 +155,7 @@ button {
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    background: #282A3A;
+    background: #e7da21;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -150,7 +164,7 @@ button {
     font-size: 28pt;
     text-align: center;
     line-height: 100px;
-    background: #FDF8E6;
+    background: #da9760;
     transform: rotateY(180deg) rotateZ(50deg);
     user-select: none;
 }
@@ -186,3 +200,17 @@ button {
 .highlight {
     color: #6f00fc;
 }
+
+@media screen and (max-width: 600px) {
+  
+    .game {
+        position: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%; 
+        height: auto; 
+        
+    }
+
+  }

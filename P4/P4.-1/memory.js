@@ -1,3 +1,14 @@
+
+const btnJugar = document.getElementById("play");
+const btnReiniciar = document.getElementById("replay");
+const display2= document.getElementById("display2");
+const btnCarta = document.getElementsByClassName("card flipped");
+
+//--Display que muestre el número de aciertos
+let aciertos = 0;
+const musica = new Audio('audioGame.mp3');
+const acierto = new Audio('acierto.mp3');
+
 const selectors = {
     gridContainer: document.querySelector('.grid-container'),
     tablero: document.querySelector('.tablero'),
@@ -12,7 +23,8 @@ const state = {
     flippedCards: 0,
     totalFlips: 0,
     totalTime: 0,
-    loop: null
+    loop: null,
+    parejasEmparejadas: 0, // Numero de parejas emparejadas
 }
 
 const generateGame = () => {
@@ -25,8 +37,9 @@ const generateGame = () => {
     }
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
-    const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
-    
+    const emojis = ['🐯', '🐒', '🦓', '🦊', '🐨', '🐷', '🐇', '🐼', '🦇', '🐊','🦁','🐗']
+
+
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
     // es diferente.
     // Es decir, si tenemos un array con 10 emojis, vamos a elegir el cuadrado de las
@@ -126,8 +139,8 @@ const startGame = () => {
     // Cada segundo vamos actualizando el display de tiempo transcurrido
     // y movimientos
     state.loop = setInterval(() => {
+        musica.play();
         state.totalTime++
-
         selectors.movimientos.innerText = `${state.totalFlips} movimientos`
         selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
     }, 1000)
@@ -149,7 +162,7 @@ const flipCard = card => {
     if (state.flippedCards <= 2) {
         card.classList.add('flipped')
     }
-
+    
     // Si ya tenemos una pareja de cartas girada tenemos que comprobar
     if (state.flippedCards === 2) {
         // Seleccionamos las cartas que están giradas
@@ -161,8 +174,20 @@ const flipCard = card => {
         if (flippedCards[0].innerText === flippedCards[1].innerText) {
             flippedCards[0].classList.add('matched')
             flippedCards[1].classList.add('matched')
-        }
+            aciertos += 1;
+            display2.innerHTML = ("Aciertos: "+ (aciertos));
+            acierto.currentTime = 0;
+            acierto.play();
 
+            state.parejasEmparejadas++;
+        
+        // Comprobamos si todas las parejas se han emparejado
+        if (state.parejasEmparejadas * 2 === document.querySelectorAll('.card').length) {
+            clearInterval(state.loop);       
+
+            }
+        }
+        
         // Arrancamos un temporizador que comprobará si tiene
         // que volver a girar las cartas porque no hemos acertado
         // o las deja giradas porque ha sido un match
@@ -171,6 +196,7 @@ const flipCard = card => {
             flipBackCards()
         }, 1000)
     }
+
 }
 
 const flipBackCards = () => {
@@ -187,3 +213,18 @@ generateGame()
 
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
+
+btnJugar.onclick = () => {
+    state.loop = setInterval(() => {
+        state.totalTime++
+        selectors.movimientos.innerText = `${state.totalFlips} movimientos`
+        selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
+    }, 1000)
+    musica.currentTime = 0;
+    musica.play();
+}
+
+//-- Función de retrollamada del botón iniciar
+btnReiniciar.onclick = () => {
+    location.reload();      //-- Reiniciando
+}
