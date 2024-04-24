@@ -7,12 +7,18 @@
         <title> Memory </title>
 
         <link rel="stylesheet" href="style.css" />
-        <script src="crono.js" defer></script>
         <script src="memory.js" defer></script>
     </head>
     <body>
-        <h1>REMEMBER THE ANIMAL 🦥</h1>
-        <div class="game">
+        <h1 id="titulo">ANIMAL'S MEMORY🦥</h1>
+        <div class="elecciones">
+            <p>Elige el nivel de dificultad:</p>
+            <button id="op1" grid-dimension="4">4x4</button>
+            <button id="op2" grid-dimension="6">6x6</button>
+            <button id="op3" grid-dimension="8">8x8</button>
+
+        </div>
+        <div class="game" id="juego">
             <div class="controles">
                 <button id="play">Comenzar</button>
                 <button id="replay">Reiniciar</button>
@@ -26,12 +32,16 @@
                 <div class="tablero" grid-dimension="4">
                         <div class="card flipped">
                             <div class="card-front"></div>
-                            <div class="card-back">🍍</div>
-                        </div>                        
+                            <div class="card-back">🐵</div>
+                        </div>           
+                        <div class="card flipped">
+                            <div class="card-front"></div>
+                            <div class="card-back">🦉</div>
+                        </div>              
                     </div>
                 </div>
-                <div class="win">¡Has Ganado!</div>
             </div>
         </div>
+        <div class="win">¡Has Ganado!</div>
     </body>
 </html>

@@ -3,11 +3,15 @@ const btnJugar = document.getElementById("play");
 const btnReiniciar = document.getElementById("replay");
 const display2= document.getElementById("display2");
 const btnCarta = document.getElementsByClassName("card flipped");
+const title = document.getElementById('titulo');
 
 //--Display que muestre el número de aciertos
 let aciertos = 0;
 const musica = new Audio('audioGame.mp3');
 const acierto = new Audio('acierto.mp3');
+var resultados = document.getElementsByClassName('win');
+var juego = document.getElementsByClassName('game');
+let dificultad = 4;
 
 const selectors = {
     gridContainer: document.querySelector('.grid-container'),
@@ -27,8 +31,10 @@ const state = {
     parejasEmparejadas: 0, // Numero de parejas emparejadas
 }
 
+
 const generateGame = () => {
-    const dimensions = selectors.tablero.getAttribute('grid-dimension')
+
+    const dimensions = dificultad;
 
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
@@ -123,9 +129,7 @@ const attachEventListeners = () => {
             flipCard(eventParent)
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
-            startGame()
-        }
+        } 
     })
 }
 
@@ -183,8 +187,9 @@ const flipCard = card => {
         
         // Comprobamos si todas las parejas se han emparejado
         if (state.parejasEmparejadas * 2 === document.querySelectorAll('.card').length) {
-            clearInterval(state.loop);       
-
+            titulo.innerHTML = ('🐵🎉¡Has ganado!🎉🐵');
+            alert(`Enhorabuena! Has ganado. Inténtalo de nuevo.`);
+            clearInterval(state.loop);
             }
         }
         
@@ -196,6 +201,8 @@ const flipCard = card => {
             flipBackCards()
         }, 1000)
     }
+
+    
 
 }
 
@@ -209,17 +216,13 @@ const flipBackCards = () => {
     state.flippedCards = 0
 }
 // Generamos el juego
-generateGame()
 
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
 
 btnJugar.onclick = () => {
-    state.loop = setInterval(() => {
-        state.totalTime++
-        selectors.movimientos.innerText = `${state.totalFlips} movimientos`
-        selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
-    }, 1000)
+    generateGame()
+    startGame()
     musica.currentTime = 0;
     musica.play();
 }
@@ -227,4 +230,17 @@ btnJugar.onclick = () => {
 //-- Función de retrollamada del botón iniciar
 btnReiniciar.onclick = () => {
     location.reload();      //-- Reiniciando
+}
+
+
+op1.onclick = () => {
+    dificultad = op1.getAttribute('grid-dimension');
+}
+
+op2.onclick = () => {
+    dificultad = op2.getAttribute('grid-dimension');
+}
+
+op3.onclick = () => {
+    dificultad = op3.getAttribute('grid-dimension');
 }
