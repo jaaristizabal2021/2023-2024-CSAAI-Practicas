@@ -1,17 +1,20 @@
 
+//-- Botones de inicio y reinicio del juego
 const btnJugar = document.getElementById("play");
 const btnReiniciar = document.getElementById("replay");
-const display2= document.getElementById("display2");
-const btnCarta = document.getElementsByClassName("card flipped");
+
 const title = document.getElementById('titulo');
 
-//--Display que muestre el número de aciertos
+//--Display que muestre el número de aciertos y su contador
+const display2= document.getElementById("display2");
 let aciertos = 0;
+
+//-- Audios del juego
 const musica = new Audio('audioGame.mp3');
 const acierto = new Audio('acierto.mp3');
 const victoria = new Audio('win.mp3');
-var resultados = document.getElementsByClassName('win');
-var juego = document.getElementsByClassName('game');
+
+//-- Valor predefinido del número de parejas 
 let dificultad = 4;
 
 const selectors = {
@@ -223,6 +226,7 @@ const flipBackCards = () => {
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
 
+// Al pulsar el boton de inicio se generara el tablero e iniciara el juego
 btnJugar.onclick = () => {
     generateGame()
     startGame()
@@ -230,16 +234,17 @@ btnJugar.onclick = () => {
     musica.play();
 }
 
-//-- Función de retrollamada del botón iniciar
+// Al pulsar el boton de reinicio
 btnReiniciar.onclick = () => {
     location.reload();      //-- Reiniciando
 }
 
+// Variables que indicaran si esta pulsado un boton o no
 let clicado = true;
 let clicado2 = true;
 let clicado3 = true;
 
-
+//-- Botones para elegir 
 op1.onclick = () => {
     dificultad = op1.getAttribute('grid-dimension');
 

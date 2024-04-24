@@ -213,7 +213,6 @@ button {
 @media screen and (max-width: 600px) {
   
     .game {
-        position: center;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
