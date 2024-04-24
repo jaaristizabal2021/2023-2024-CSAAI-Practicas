@@ -11,9 +11,17 @@ body{
     background-color: #6b3508;
 }
 h1{
-    font-size: 40px;
+    font-size: 70px;
     margin: 10px;
     color: #f1dc18;
+    margin-left: 550px;
+}
+
+.elecciones{
+    color: #e7da21;
+    margin-left: 700px;
+    font-size: 40px;
+    margin-top: 30px;
 }
 
 .game {
@@ -23,6 +31,7 @@ h1{
     transform: translate(-50%, -50%);
     background-color: #814c21;
     border-radius: 25px;
+    margin-top: 200px;
 }
 
 button {
@@ -210,7 +219,21 @@ button {
         transform: translate(-50%, -50%);
         width: 100%; 
         height: auto; 
-        
     }
+    
+    h1{
+        font-size: 65px;
+        margin: 0;
+    }
+    .elecciones{
+        margin: 0;
+    }
+    .game{
+        margin-top: 300px;
+    }
+    .card{
+        width: 90%;
+    }
+}
 
-  }
+  

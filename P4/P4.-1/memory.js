@@ -9,6 +9,7 @@ const title = document.getElementById('titulo');
 let aciertos = 0;
 const musica = new Audio('audioGame.mp3');
 const acierto = new Audio('acierto.mp3');
+const victoria = new Audio('win.mp3');
 var resultados = document.getElementsByClassName('win');
 var juego = document.getElementsByClassName('game');
 let dificultad = 4;
@@ -43,7 +44,8 @@ const generateGame = () => {
     }
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
-    const emojis = ['🐯', '🐒', '🦓', '🦊', '🐨', '🐷', '🐇', '🐼', '🦇', '🐊','🦁','🐗']
+    const emojis = ['🐯', '🐒', '🦓', '🦊', '🐨', '🐷', '🐇', '🐼', '🦇', '🐊','🦁','🐗','🐍','🦝','🦏','🦛',
+    '🦩','🐧','🦭','🐎','🐃','🦍','🦒','🐫','🐘','🐏','🐁','🦦','🦔','🐻‍❄️','🦬','🦜','🦚','🐫','🐄','🐆']
 
 
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
@@ -187,9 +189,10 @@ const flipCard = card => {
         
         // Comprobamos si todas las parejas se han emparejado
         if (state.parejasEmparejadas * 2 === document.querySelectorAll('.card').length) {
+            victoria.play();
             titulo.innerHTML = ('🐵🎉¡Has ganado!🎉🐵');
-            alert(`Enhorabuena! Has ganado. Inténtalo de nuevo.`);
             clearInterval(state.loop);
+            alert(`Enhorabuena! Has ganado. Inténtalo de nuevo.`);
             }
         }
         
@@ -232,15 +235,72 @@ btnReiniciar.onclick = () => {
     location.reload();      //-- Reiniciando
 }
 
+let clicado = true;
+let clicado2 = true;
+let clicado3 = true;
+
 
 op1.onclick = () => {
     dificultad = op1.getAttribute('grid-dimension');
+
+    if (clicado){
+        op1.style.backgroundColor = "#42250c";
+        op1.style.color ='#f1dc18'
+        op2.style.backgroundColor = "#f1dc18";
+        op2.style.color ='#42250c'
+        op3.style.backgroundColor = "#f1dc18";
+        op3.style.color ='#42250c'
+        clicado = !clicado;
+
+    } else{
+        op1.style.backgroundColor = "#f1dc18";
+        op1.style.color ='#42250c'
+        op3.style.backgroundColor = "#42250c";
+        op3.style.color ='#f1dc18'
+        op2.style.backgroundColor = "#42250c";
+        op2.style.color ='#f1dc18'
+    }
+    
 }
 
 op2.onclick = () => {
     dificultad = op2.getAttribute('grid-dimension');
+    if (clicado2){
+        op2.style.backgroundColor = "#42250c";
+        op2.style.color ='#f1dc18'
+        op1.style.backgroundColor = "#f1dc18";
+        op1.style.color ='#42250c'
+        op3.style.backgroundColor = "#f1dc18";
+        op3.style.color ='#42250c'
+        clicado2 = !clicado2;
+        
+    } else{
+        op2.style.backgroundColor = "#f1dc18";
+        op2.style.color ='#42250c'
+        op1.style.backgroundColor = "#42250c";
+        op1.style.color ='#f1dc18'
+        op3.style.backgroundColor = "#42250c";
+        op3.style.color ='#f1dc18'
+    }
 }
 
 op3.onclick = () => {
     dificultad = op3.getAttribute('grid-dimension');
+    if (clicado3){
+        op3.style.backgroundColor = "#42250c";
+        op3.style.color ='#f1dc18'
+        op2.style.backgroundColor = "#f1dc18";
+        op2.style.color ='#42250c'
+        op1.style.backgroundColor = "#f1dc18";
+        op1.style.color ='#42250c'
+        clicado3 = !clicado3;
+
+    } else{
+        op3.style.backgroundColor = "#f1dc18";
+        op3.style.color ='#42250c'
+        op2.style.backgroundColor = "#42250c";
+        op2.style.color ='#f1dc18'
+        op1.style.backgroundColor = "#42250c";
+        op1.style.color ='#f1dc18'
+    }
 }
