@@ -4,6 +4,11 @@ const btnJugar = document.getElementById("play");
 const btnReiniciar = document.getElementById("replay");
 
 const title = document.getElementById('titulo');
+ 
+//--Botones para elegir la dificultad
+const op1 = document.getElementById('op1');
+const op2 = document.getElementById('op2');
+const op3 = document.getElementById('op3');
 
 //--Display que muestre el número de aciertos y su contador
 const display2= document.getElementById("display2");
@@ -132,8 +137,7 @@ const attachEventListeners = () => {
         // Cuando se trata de una carta que no está girada, le damos la vuelta para mostrarla
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent)
-        // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
-        // empezar el juego
+        
         } 
     })
 }
@@ -244,7 +248,7 @@ let clicado = true;
 let clicado2 = true;
 let clicado3 = true;
 
-//-- Botones para elegir 
+//-- Botones para elegir dificultad
 op1.onclick = () => {
     dificultad = op1.getAttribute('grid-dimension');
 
