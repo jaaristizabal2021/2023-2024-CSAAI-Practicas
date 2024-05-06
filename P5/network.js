@@ -40,11 +40,45 @@ function crearRedAleatoriaConCongestion(numNodos, numConexiones) {
   const nodos = [];
   let x = 0, y = 0, delay = 0;
   let nodoActual = 0, nodoAleatorio = 0, pickNode = 0, peso = 0;
+  let bSpace = false;
+
+  const xs = Math.floor(canvas.width / numNodos);
+  const ys = Math.floor(canvas.height / 2 );
+  const xr = canvas.width - nodeRadius;
+  const yr = canvas.height - nodeRadius;
+  let xp = nodeRadius;
+  let yp = nodeRadius;
+  let xsa = xs;
+  let ysa = ys;
 
   // Generamos los nodos
   for (let i = 0; i < numNodos; i++) {
-    x = randomNumber(nodeRadius, (canvas.width - nodeRadius)); // Generar coordenada x aleatoria
-    y = randomNumber(nodeRadius, (canvas.height - nodeRadius)); // Generar coordenada y aleatoria
+
+    //var random_boolean = Math.random() < 0.5;
+    if (Math.random() < 0.5) {
+      yp = nodeRadius;
+      ysa = ys;
+    } 
+    else {
+      yp = ys;
+      ysa = yr;
+    }
+
+    x = randomNumber(xp, xsa); // Generar coordenada x aleatoria
+    y = randomNumber(yp, ysa); // Generar coordenada y aleatoria
+
+    xp = xsa;
+    xsa = xsa + xs;
+
+    if ( xsa > xr && xsa <= canvas.width ) {
+      xsa = xr;
+    }
+
+    if ( xsa > xr && xsa < canvas.width ) {
+      xp = nodeRadius;
+      xsa = xs;
+    }    
+
     delay = generarRetardo(); // Retardo aleatorio para simular congestión
     nodos.push(new Nodo(i, x, y, delay)); // Generar un nuevo nodo y añadirlo a la lista de nodos de la red
   }
@@ -75,6 +109,7 @@ function randomNumber(min, max) {
 }
 
 // Dibujar la red en el canvas
+// Dibujar la red en el canvas
 function drawNet(nnodes) {
   // Dibujamos las conexiones entre nodos
   nnodes.forEach(nodo => {
@@ -83,6 +118,15 @@ function drawNet(nnodes) {
       ctx.moveTo(nodo.x, nodo.y);
       ctx.lineTo(conexion.x, conexion.y);
       ctx.stroke();
+
+      ctx.font = '12px Arial';
+      ctx.fillStyle = 'black';
+      ctx.textAlign = 'center';
+      pw = "N" + nodo.id + " pw " + peso;
+      const midX = Math.floor((nodo.x + conexion.x)/2);
+      const midY = Math.floor((nodo.y + conexion.y)/2);
+      ctx.fillText(pw, midX, midY);  
+
     });
   });
 
