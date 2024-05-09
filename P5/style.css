@@ -1,14 +1,27 @@
 canvas {
     border: 1px solid black;
+    background-color: #f5f2ef;
+
   }
   
-  .controls {
+h1{
+  font-size: 50px;
+  color: #282A3A;
+  margin-left: 170px;
+}
+body{
+    margin-left: 550px;
+    margin-top: 100px ;
+    background-color: #9fa0ca;
+  }
+
+.controls {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
   }
   
-  button {
+button {
     background: #282A3A;
     color: #FFF;
     border-radius: 2px;
@@ -18,3 +31,36 @@ canvas {
     font-family: Fredoka;
     font-size: 18pt;
   }
+
+#stats{
+  color: #282A3A;
+  font-size: 20px;
+  font-family: Fredoka;
+
+}
+
+
+@media screen and (max-width: 600px) {
+  
+  canvas{
+    margin: none;
+    height: 180px;
+  }
+  body{
+    margin: 40px;
+  }
+  h1{
+      font-size: 45px;
+      margin: 0;
+  }
+  .controls{
+    display: flex;
+    gap: 20px;
+    margin: none;
+  }
+  button{
+    font-size: 10pt;
+
+  }
+}
+
