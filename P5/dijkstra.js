@@ -39,7 +39,7 @@ function dijkstraConRetardos(red, origen, destino) {
         distancia[nodo.id] = distanciaTotal;
         anterior[nodo.id] = nodoActual;
         console.log(distanciaTotal);
-        tiempoTotal.innerHTML = "Tiempo total: " + Math.round(distanciaTotal) + " seg";
+        tiempoTotal.innerHTML = "Tiempo total: " + Math.round(distanciaTotal) + " sec.";
       }
     }
   }

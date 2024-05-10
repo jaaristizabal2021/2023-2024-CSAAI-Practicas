@@ -15,6 +15,7 @@ const pipeRandomWeight = 100; // No hay retardo entre nodos 100
 //  Variables para mostrar el estado de la red
 let numTotal = document.getElementById("num");
 let estdoRed = document.getElementById("estado");
+let tiempoTot = document.getElementById("tiempo");
 
 // Localizando elementos en el DOM
 const btnCNet = document.getElementById("btnCNet");
@@ -228,7 +229,7 @@ function drawNet(nnodes) {
   nnodes.forEach(nodo => {
     ctx.beginPath();
     ctx.arc(nodo.x, nodo.y, nodeRadius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = 'purple';
     ctx.fill();
     ctx.stroke();
     ctx.font = '12px Arial';
@@ -274,6 +275,9 @@ btnCNet.onclick = () => {
 
   // Numero de nodos
   numTotal.innerHTML = "Nodos: " + numNodos;
+
+  tiempoTot.innerHTML = "Tiempo total: 0 sec."
+  
 }
 
 
